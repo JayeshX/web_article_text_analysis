@@ -10,17 +10,17 @@ based on the data extracted there were some unnecessary information in the text 
 # Analysis 
 Various basic parameters for text analysis are used and codes written in the file Analysis.py
 the parameters are:
-•	Average Sentence Length
-•	Average Word Count
-•	Complex Word Count
-•	Negative Score
-•	Personal Pronouns Count
-•	Polarity Score
-•	Positive Score
-•	Words Per Sentence
-•	Subjectivity Score
-•	Syllables Per Word
-•	Fog Index
+* Average Sentence Length
+*	Average Word Count
+*	Complex Word Count
+*	Negative Score
+*	Personal Pronouns Count
+*	Polarity Score
+*	Positive Score
+*	Words Per Sentence
+*	Subjectivity Score
+*	Syllables Per Word
+*	Fog Index
 
 # Storing
 once all the parameters are calculated they are stored in an excel sheet for further analysis
