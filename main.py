@@ -1,12 +1,17 @@
 import pandas as pd
 import nltk
 import Analysis
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 d = Analysis.Analysis()
-# Example usage
 print("average sentence lengths")
 
-dataframe1 = pd.read_excel('C:/Users/User/Desktop/interndrive/input.xlsx')
+
+
+dataframe1 = os.getenv('input_excel')
 negative_words_file_path = 'C:/Users/User/Desktop/internship docs/negative-words.txt'
 stopwords_file_path = 'C:/Users/User/Desktop/internship docs/stopwords.txt'
 positive_words_file_path = 'C:/Users/User/Desktop/internship docs/positive-words.txt'
