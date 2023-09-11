@@ -7,8 +7,8 @@ from textblob import TextBlob
 
 
 class Analysis:
-    negative_words_file_path = 'C:/Users/User/Desktop/internship docs/negative-words.txt'
-    stopwords_file_path = 'C:/Users/User/Desktop/internship docs/stopwords.txt'
+    negative_words_file_path = 'C://Users//User//PycharmProjects//text_analysis_on_web_articles//WordLists//NegativeWords.txt'
+    stopwords_file_path = 'C://Users//User//PycharmProjects//text_analysis_on_web_articles//WordLists//StopWords.txt'
     def get_average_sentence_length(self, text_file):
         # Read the text file
         with open(text_file, 'r', encoding='utf-8') as file:
@@ -66,10 +66,10 @@ class Analysis:
         with open(text_file, 'r', encoding='utf-8') as file:
             text = file.read()
 
-        with open(negative_words_file, 'r') as file:
+        with open(negative_words_file, 'r',encoding='utf-8') as file:
             negative_words = set(word.strip() for word in file)
 
-        with open(stopwords_file, 'r') as file:
+        with open(stopwords_file, 'r',encoding='utf-8') as file:
             stopwords = set(word.strip() for word in file)
 
         translator = str.maketrans('', '', string.punctuation)

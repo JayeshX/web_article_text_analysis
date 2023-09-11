@@ -21,7 +21,7 @@ for index, row in dataframe1.iterrows():
     res = requests.get(url)
     html_page = res.content
     soup = BeautifulSoup(html_page, 'html.parser')
-    text = soup.find_all(text=True)
+    text = soup.find_all(string=True)
     output = ''
 
     for t in text:

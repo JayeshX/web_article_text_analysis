@@ -11,10 +11,13 @@ print("average sentence lengths")
 
 
 
-dataframe1 = os.getenv('input_excel')
-negative_words_file_path = 'C:/Users/User/Desktop/internship docs/negative-words.txt'
-stopwords_file_path = 'C:/Users/User/Desktop/internship docs/stopwords.txt'
-positive_words_file_path = 'C:/Users/User/Desktop/internship docs/positive-words.txt'
+ip_path = os.getenv('input_excel')
+negative_words_file_path = os.getenv('negwords')
+stopwords_file_path = os.getenv('stopwords')
+positive_words_file_path = os.getenv('poswords')
+extout = os.getenv('Extract_output')
+outex = os.getenv('output_excel')
+dataframe1 = pd.read_excel(ip_path)
 ids = []
 for index, row in dataframe1.iterrows():
     url = row['URL_ID']
@@ -32,7 +35,8 @@ ss = []
 swc = []
 wc = []
 for i in ids:
-    text_file_path = "C:/Users/User/Desktop/git trial/" + str(i) + ".txt"
+    print(i)
+    text_file_path = extout + str(i) + ".txt"
     average_length = d.get_average_sentence_length(text_file_path)
     al.append(average_length)
     averge_words = d.average_word_count(text_file_path)
@@ -60,6 +64,7 @@ cmpx_percentage = []
 fog_index = []
 j = 0
 for i in ids:
+    
     complex_percentage = (cwc[j] / wc[j]) * 100
     cmpx_percentage.append(complex_percentage)
     fg = 0.4*(nwps[j]+ complex_percentage)
@@ -83,4 +88,4 @@ data = {'IDS': ids,
         }
 df = pd.DataFrame(data)
 print(df)
-df.to_excel('C:/Users/User/Desktop/git trial/output.xlsx')
+df.to_excel(outex)
